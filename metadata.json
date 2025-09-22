@@ -1,0 +1,8 @@
+{
+  "name": "أثير",
+  "description": "زميل ذكاء اصطناعي للمعرفة والتنفيذ بواجهة تفاعلية ومبهجة.",
+  "permissions": [
+    "microphone",
+    "clipboard-read"
+  ]
+}
