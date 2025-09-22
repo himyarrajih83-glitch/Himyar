@@ -3,15 +3,29 @@ import { View } from './types';
 import { Sidebar } from './components/Sidebar';
 import { IconHelp } from './components/icons';
 
-// Placeholder for the view components
+import { CortexView } from './views/CortexView';
+
+// Renders the currently active view component
 const ViewRenderer = ({ activeView }: { activeView: View }) => {
-    return (
-        <div className="flex-1 flex items-center justify-center">
-            <h1 className="text-5xl font-bold text-aether-text-secondary opacity-20">
-                {activeView}
-            </h1>
-        </div>
-    );
+    const renderView = () => {
+        switch (activeView) {
+            case View.Cortex:
+                return <CortexView />;
+            // Other views will be added here later
+            // case View.Dashboard:
+            //     return <DashboardView />;
+            default:
+                return (
+                    <div className="flex-1 flex items-center justify-center">
+                        <h1 className="text-5xl font-bold text-aether-text-secondary opacity-20">
+                            {activeView}
+                        </h1>
+                    </div>
+                );
+        }
+    };
+
+    return <div className="flex-1 flex flex-col">{renderView()}</div>;
 }
 
 export const App = () => {
